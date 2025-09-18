@@ -1,6 +1,6 @@
 # Hello!
 
-This is a custom vanilla framework created by Ahan. It uses the following tools:
+This is a custom vanilla framework that I made. It uses the following tools:
 
 Babel \
 Terser \
