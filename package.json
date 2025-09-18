@@ -1,0 +1,14 @@
+{
+  "name": "@ultra23ahan/create-custom-vanilla",
+  "version": "1.0.2",
+  "description": "Ahan's Custom Framework",
+  "bin": {
+    "create-custom-vanilla": "index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

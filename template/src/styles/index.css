@@ -1,0 +1,56 @@
+:root {
+  --red: #f13b47;
+  --pink: #ef82c1;
+  --blue: #0080ff;
+  --green: #65fb32;
+  --white: #f1f1f1;
+  --black: #1e1e1e;
+  --grey: #868686;
+  --orange: #e48837;
+  --yellow: #f1c02d;
+  --violet: #8554fd;
+  --cyan: #80e7fa;
+  --lavender: #d09bff;
+  --turquoise: #73f8c6;
+}
+
+* {
+  font-family: system-ui, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+body > div {
+font-size: 5rem;
+}
+
+body > button{
+    font-size: 1.5rem;
+    border: 2px solid var(--black);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.7rem;
+    background-color: var(--blue);
+    color: var(--white);
+    transition: all 0.1s ease-in-out;
+}
+
+body > button:hover{
+    transform: scale(1.25);
+}
+
+body > button:active{
+    transform: scale(0.95);
+}

@@ -1,0 +1,7 @@
+{
+  "compress": true,
+  "mangle": true,
+  "format": {
+    "comments": false
+  }
+}

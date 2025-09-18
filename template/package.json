@@ -1,0 +1,35 @@
+{
+  "name": "custom-vanilla-app",
+  "version": "1.0.0",
+  "scripts": {
+    "clean:mac": "shx rm -rf dist",
+    "clean:win": "powershell -Command \"Remove-Item -Recurse -Force dist\"",
+    "lint:css": "stylelint 'src/**/*.css' --fix",
+    "build:css:mac": "postcss 'src/**/*.css' --dir dist/src --base src",
+    "build:css:win": "powershell -Command \"Get-ChildItem -Recurse -Path src -Filter *.css | ForEach-Object { postcss $_.FullName --dir dist/src --base src }\"",
+    "build:js:mac": "babel src --out-dir dist/src --extensions .js && find dist/src -name '*.js' -exec terser {} --config-file terser.config.json -o {} \\;",
+    "build:js:win": "babel src --out-dir dist/src --extensions .js && powershell -Command \"Get-ChildItem -Recurse -Path dist/src -Filter *.js | ForEach-Object { terser $_.FullName --config-file terser.config.json -o $_.FullName }\"",
+    "build:html:mac": "shx cp ./*.html dist/",
+    "build:html:win": "powershell -Command \"Copy-Item -Path .\\*.html -Destination dist -Recurse\"",
+    "build": "node scripts/build.js",
+    "start": "live-server dist",
+    "dev": "live-server ."
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^39.0.0",
+    "terser": "^5.43.1",
+    "shx": "^0.4.0"
+  }
+}
